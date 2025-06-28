@@ -1,4 +1,4 @@
-int addNumbers(String numbers) {
+int add(String numbers) {
   if (numbers.isEmpty) return 0;
 
   List<String> splitParts = numbers.split(RegExp(r'[,\n]'));
