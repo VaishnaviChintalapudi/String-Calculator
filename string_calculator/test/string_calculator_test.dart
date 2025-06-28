@@ -46,6 +46,18 @@ void main() {
         () => addNumbers("-2,-3,-4"),
         throwsA(predicate((err) =>
             err is Exception &&
-            err.toString().contains("negative numbers not allowed [-2, -3, -4]"))));
+            err
+                .toString()
+                .contains("negative numbers not allowed [-2, -3, -4]"))));
+  });
+
+  test("Testing for multiple negative number", () {
+    expect(
+        () => addNumbers("-2,-3,-4,3,4,5"),
+        throwsA(predicate((err) =>
+            err is Exception &&
+            err
+                .toString()
+                .contains("negative numbers not allowed [-2, -3, -4]"))));
   });
 }
