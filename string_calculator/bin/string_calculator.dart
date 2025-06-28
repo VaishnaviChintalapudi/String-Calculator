@@ -1,5 +1,6 @@
-import 'package:string_calculator/string_calculator.dart' as string_calculator;
+int addNumbers(String numbers) {
+  if (numbers.isEmpty) return 0;
 
-void main(List<String> arguments) {
-  print('Hello world: ${string_calculator.calculate()}!');
+  var splitParts = numbers.split(',');
+  return splitParts.map(int.parse).reduce((a, b) => a + b);
 }
