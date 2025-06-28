@@ -1,7 +1,11 @@
+import 'package:string_calculator/string_calculator.dart';
 import 'package:test/test.dart';
-import '../bin/string_calculator.dart';
 
 void main() {
+  test("Returns 0 for empty string", () {
+    expect(add(null), 0);
+  });
+
   test("Returns 0 for empty string", () {
     expect(add(""), 0);
   });
@@ -22,12 +26,20 @@ void main() {
     expect(add("1\n2,3"), 6);
   });
 
-  test("Testcase to handle new lines between numbers123", () {
+  test("Testcase to handle new lines between numbers", () {
     expect(add("//;\n1;2"), 3);
   });
 
   test("Testcase to verify the custom delimiters", () {
     expect(add("//@\n3@5\n5"), 13);
+  });
+
+  test("Handles custom delimiter with special characters", () {
+    expect(add("//.\n1.2.3"), 6);
+  });
+
+  test("Handles numbers with spaces", () {
+    expect(add(" 1 , 2 "), 3);
   });
 
   test("Testing for a negative number", () {
@@ -43,8 +55,7 @@ void main() {
         () => add("-2,-3,-4"),
         throwsA(predicate((err) =>
             err is Exception &&
-            err
-                .toString()
+            err.toString()
                 .contains("negative numbers not allowed [-2, -3, -4]"))));
   });
 
@@ -53,8 +64,7 @@ void main() {
         () => add("-2,-3,-4,3,4,5"),
         throwsA(predicate((err) =>
             err is Exception &&
-            err
-                .toString()
+            err.toString()
                 .contains("negative numbers not allowed [-2, -3, -4]"))));
   });
 }
