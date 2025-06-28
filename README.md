@@ -21,13 +21,13 @@ The sum of the numbers
 
 # Features Implemented
 
-Empty string returns 0.
-Single numbers returns the number itself.
-Two comma-seperated numbers returns their sum.
-Multiple comma-seperated numbers returns their sum.
-Supports newline (\n) as delimiter.
-Supports custom delimiter (//;\n1;2).
-Throws exception for negative numbers with all negatives in message 
+	Empty string returns 0.
+	Single numbers returns the number itself.
+	Two comma-seperated numbers returns their sum.
+	Multiple comma-seperated numbers returns their sum.
+	Supports newline (\n) as delimiter.
+	Supports custom delimiter (//;\n1;2).
+	Throws exception for negative numbers with all negatives in message 
 
 
 
