@@ -28,4 +28,8 @@ void main() {
   test("Testcase to handle new lines between numbers123", () {
     expect(addNumbers("//;\n1;2"), 3);
   });
+
+  test("Testcase to verify the custom delimiters", () {
+    expect(addNumbers("//@\n3@5\n5"), 13);
+  });
 }
