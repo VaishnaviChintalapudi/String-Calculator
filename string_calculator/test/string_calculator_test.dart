@@ -20,4 +20,8 @@ void main() {
   test("Returns the sum of multiple comma seperated numbers", () {
     expect(addNumbers("1,2,3,4,5"), 15);
   });
+
+  test("Testcase to handle new lines between numbers", () {
+    expect(addNumbers("1\n2,3"), 6);
+  });
 }
