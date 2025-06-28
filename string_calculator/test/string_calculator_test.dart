@@ -1,7 +1,4 @@
-import 'dart:math';
-
 import 'package:test/test.dart';
-
 import '../bin/string_calculator.dart';
 
 void main() {
