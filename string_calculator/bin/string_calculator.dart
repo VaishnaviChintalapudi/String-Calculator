@@ -12,7 +12,8 @@ int addNumbers(String numbers) {
   }
 
   var list = splitParts.map(int.parse).toList();
-  List<int> negatives = list.where((element) => element < 0).toList();
+  List<int> negatives =
+      list.where((element) => element < 0).toList(); //collect all the negatives
   if (negatives.isNotEmpty) {
     throw Exception("negative numbers not allowed $negatives");
   }

@@ -33,11 +33,19 @@ void main() {
     expect(addNumbers("//@\n3@5\n5"), 13);
   });
 
-  test("Testing for negative number", () {
+  test("Testing for a negative number", () {
     expect(
         () => addNumbers("-2"),
         throwsA(predicate((err) =>
             err is Exception &&
             err.toString().contains("negative numbers not allowed [-2]"))));
+  });
+
+  test("Testing for multiple negative number", () {
+    expect(
+        () => addNumbers("-2,-3,-4"),
+        throwsA(predicate((err) =>
+            err is Exception &&
+            err.toString().contains("negative numbers not allowed [-2, -3, -4]"))));
   });
 }
