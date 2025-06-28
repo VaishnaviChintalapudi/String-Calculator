@@ -10,4 +10,8 @@ void main() {
   test("Returns the number if only one is provided", () {
     expect(addNumbers("10"), 10);
   });
+
+  test("Returns the sum of two comma seperated numbers", () {
+    expect(addNumbers("2,3"), 5);
+  });
 }
