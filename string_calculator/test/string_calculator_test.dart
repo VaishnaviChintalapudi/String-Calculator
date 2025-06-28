@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:test/test.dart';
 
 import '../bin/string_calculator.dart';
@@ -13,5 +15,9 @@ void main() {
 
   test("Returns the sum of two comma seperated numbers", () {
     expect(addNumbers("2,3"), 5);
+  });
+
+  test("Returns the sum of multiple comma seperated numbers", () {
+    expect(addNumbers("1,2,3,4,5"), 15);
   });
 }
