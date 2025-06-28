@@ -32,4 +32,12 @@ void main() {
   test("Testcase to verify the custom delimiters", () {
     expect(addNumbers("//@\n3@5\n5"), 13);
   });
+
+  test("Testing for negative number", () {
+    expect(
+        () => addNumbers("-2"),
+        throwsA(predicate((err) =>
+            err is Exception &&
+            e.toString().contains("negative numbers not allowed -1"))));
+  });
 }
