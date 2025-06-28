@@ -38,6 +38,6 @@ void main() {
         () => addNumbers("-2"),
         throwsA(predicate((err) =>
             err is Exception &&
-            e.toString().contains("negative numbers not allowed -1"))));
+            err.toString().contains("negative numbers not allowed [-2]"))));
   });
 }
