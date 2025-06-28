@@ -24,4 +24,8 @@ void main() {
   test("Testcase to handle new lines between numbers", () {
     expect(addNumbers("1\n2,3"), 6);
   });
+
+  test("Testcase to handle new lines between numbers123", () {
+    expect(addNumbers("//;\n1;2"), 3);
+  });
 }
